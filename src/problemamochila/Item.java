@@ -7,12 +7,12 @@ public class Item {
     public int peso;
 
     public Item(int numero, int lucro, int peso) {
-	this.numero=numero;
-        this.lucro=lucro;
-	this.peso=peso;
+		this.numero=numero;
+		this.lucro=lucro;
+		this.peso=peso;
     }
 
     public void printItem() {
-	System.out.println("Item: " + this.numero + " Lucro: " + this.lucro + " Peso: " + this.peso);
+		System.out.println("Item: " + this.numero + " Lucro: " + this.lucro + " Peso: " + this.peso);
     }
 }

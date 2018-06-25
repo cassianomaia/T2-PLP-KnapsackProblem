@@ -27,14 +27,27 @@ public class main {
         
         
         System.out.print("Resolução com programação dinâmica:\n\n");
-        ProgramacaoDinamica solucao = new ProgramacaoDinamica(m);
-        Mochila solucao_final = solucao.ResolucaoDinamica();
+        ProgramacaoDinamica solucao_pd = new ProgramacaoDinamica(m);
+        Mochila solucao_final_pd = solucao_pd.ResolucaoDinamica();
         System.out.println("Items na mochila:");
-        for(Item i: solucao_final.items) {
+        for(Item i: solucao_final_pd.items) {
             i.printItem();
             pesoTotal+=i.peso;
         }
-        System.out.println("Lucro Total: " + solucao_final.lucro);
+        System.out.println("Lucro Total: " + solucao_final_pd.lucro);
         System.out.println("Peso total:"+pesoTotal);
-    }    
+
+        //-----------------------------------------------------//
+        pesoTotal = 0;
+        System.out.print("\n\nResolução com algoritmo guloso:\n\n");
+        BestFirst solucao_best = new BestFirst(m);
+        No solucao_final_bestfirst = solucao_best.ResolucaoBestFirst();
+        System.out.println("Items na mochila:");
+        for(Item i: solucao_final_bestfirst.items) {
+            i.printItem();
+            pesoTotal+=i.peso;
+        }
+        System.out.println("Lucro Total: " + solucao_final_bestfirst.lucro);
+        System.out.println("Peso total:"+pesoTotal);
+    }
 }
