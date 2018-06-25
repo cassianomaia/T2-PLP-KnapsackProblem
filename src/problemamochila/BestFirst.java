@@ -53,9 +53,9 @@ public class BestFirst {
 				tempNo.nivel++;
 				tempNo.setLimite(tempNo.getLimite(this.s));
                                 
-				if(tempNo.limite > lucroMax && u.nivel < numItems-1) {
-					q.add(tempNo);
-				}
+				//if(tempNo.limite > lucroMax && u.nivel < numItems-1) {
+				//	q.add(tempNo);
+				//}
 			}
 		}
 		return lucroMaxNo;

@@ -9,7 +9,7 @@ public class main {
         Item item3 = new Item(3,  30,  6);
         Item item4 = new Item(4, 100, 10);
         Item item5 = new Item(5,  40, 12);
-        Item item6 = new Item(6,  50, 20);
+        Item item6 = new Item(6,  50, 15);
         Item item7 = new Item(7,  40, 15);
         Item item8 = new Item(8,  30, 20);
         ArrayList<Item> lista = new ArrayList<Item>(9);
