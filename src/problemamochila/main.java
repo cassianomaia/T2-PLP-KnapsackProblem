@@ -2,7 +2,7 @@ package problemamochila;
 import java.util.ArrayList;
 
 public class main {
-    public static void main(String[] argv){
+    public static void main(String[] argv) {
         int pesoTotal=0;
         Item item1 = new Item(1, 100, 14);
         Item item2 = new Item(2,  22,  8);
@@ -30,7 +30,7 @@ public class main {
         ProgramacaoDinamica solucao = new ProgramacaoDinamica(m);
         Mochila solucao_final = solucao.ResolucaoDinamica();
         System.out.println("Items na mochila:");
-        for(Item i: solucao_final.items){
+        for(Item i: solucao_final.items) {
             i.printItem();
             pesoTotal+=i.peso;
         }

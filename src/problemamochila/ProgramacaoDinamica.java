@@ -9,7 +9,7 @@ public class ProgramacaoDinamica {
     	this.m = m;
     }
     
-    public Mochila ResolucaoDinamica(){
+    public Mochila ResolucaoDinamica() {
        ArrayList<Item> items = m.items; 
        m.items = new ArrayList<Item>();
        
@@ -25,7 +25,7 @@ public class ProgramacaoDinamica {
     	{
             for(int j = 1; j < solucao_otima[i].length; j++)
             {
-            	if(items.get(i).peso <= j && items.get(i).lucro + solucao_otima[i-1][j-items.get(i).peso] >= solucao_otima[i-1][j]){
+            	if(items.get(i).peso <= j && items.get(i).lucro + solucao_otima[i-1][j-items.get(i).peso] >= solucao_otima[i-1][j]) {
                     solucao_otima[i][j] = (items.get(i).lucro + solucao_otima[i-1][j-items.get(i).peso]);
                     items_solucao_otima[i][j] = 1;
 		}
@@ -37,18 +37,15 @@ public class ProgramacaoDinamica {
         }
         int peso = m.pesoMax;
     	int contador = 0;
-    	//Determines which items were kept in the optimal solution of the knapsack problem
     	for(int i = items.size()-1; i >= 0 ; i--) {
     		if(items_solucao_otima[i][peso] == 1) 
     		{
-    			m.items.add(items.get(i));
-    			peso -= items.get(i).peso;
-    			contador += items.get(i).peso;
+                    m.items.add(items.get(i));
+                    peso -= items.get(i).peso;
+                    contador += items.get(i).peso;
     		}
     	}
-    	//sets the total profit to the item in the bottom right corner of the array which is the optimal solution ot the problem
     	m.setLucro(solucao_otima[items.size()-1][m.pesoMax]);
-    	//returns the optimal solution in the form of a knapsack  
         return m;
     }
 }
